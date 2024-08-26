@@ -1,5 +1,8 @@
 package api.test;
 
+
+// by using the routes properties file by using the userendpoints2 added all 
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;

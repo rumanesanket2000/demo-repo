@@ -31,14 +31,21 @@ public class DDTests {
 	}
 	
 	
-//	@Test(priority=2,dataProvider="UserNames",dataProviderClass=DataProviders.class)
-//	public void deleteuser(String userName) {
-//		Response re=Userendpoints.deleteUser(userName);
+	@Test(priority=2,dataProvider="UserNames",dataProviderClass=DataProviders.class)
+	public void get2user(String userName) {
+		Response re=Userendpoints.readUser(userName);
+		re.then().log().all();
+		Assert.assertEquals(re.getStatusCode(), 200);
+	}
+	
+//	@Test(priority=2,dataProvider="UserId",dataProviderClass=DataProviders.class)
+//	public void readuser(String userName) {
+//		Response re=Userendpoints.readUser(userName);
 //		re.then().log().all();
 //		Assert.assertEquals(re.getStatusCode(), 200);
 //	}
 	
-	@Test(priority=2,dataProvider="UserId",dataProviderClass=DataProviders.class)
+	@Test(priority=3,dataProvider="UserId",dataProviderClass=DataProviders.class)
 	public void deleteuser(String userName) {
 		Response re=Userendpoints.deleteUser(userName);
 		re.then().log().all();
